@@ -7,34 +7,18 @@
   <meta name="description" content="Saif ur Rehman — Gameplay Programmer (Unity, C#). Portfolio: gameplay systems, puzzle mechanics, AI, optimization, Addressables, Firebase. Open to remote roles." />
   <meta name="keywords" content="Unity, C#, Gameplay Programmer, Game Developer, Puzzle Mechanics, Optimization, Scriptable Objects, Addressables, Firebase" />
   <meta name="author" content="Saif ur Rehman" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Saif ur Rehman — Gameplay Programmer" />
-  <meta property="og:description" content="Gameplay Programmer (Unity & C#). Portfolio of gameplay systems, puzzle mechanics, AI, and performance optimization." />
-  <meta property="og:image" content="/assets/og-banner.png" />
-  <meta property="og:type" content="website" />
 
-  <!-- Fonts & icons (system stack fallback) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <!-- GSAP for animations (CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
   <style>
-    :root{
-      --bg:#05060a; --card:#0f1720; --muted:#94a3b8; --accent:#4db8ff; --glass: rgba(255,255,255,0.03);
-      --glass-border: rgba(255,255,255,0.06);
-      --radius:14px; --maxw:1100px;
-    }
-    /* Light theme variables (toggled) */
+    :root{ --bg:#05060a; --card:#0f1720; --muted:#94a3b8; --accent:#4db8ff; --glass: rgba(255,255,255,0.03); --glass-border: rgba(255,255,255,0.06); --radius:14px; --maxw:1100px; }
     .theme-light{ --bg:#f7fafc; --card:#ffffff; --muted:#475569; --accent:#0ea5a4; --glass: rgba(255,255,255,0.6); --glass-border: rgba(0,0,0,0.06); color:#0b1220 }
-
     *{box-sizing:border-box}
     html,body{height:100%; margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color: #e6eef8;}
     a{color:var(--accent)}
 
-    /* NAVBAR */
     nav{position:fixed; top:18px; left:50%; transform:translateX(-50%); z-index:60; width:calc(100% - 48px); max-width:var(--maxw); display:flex; align-items:center; justify-content:space-between}
     .nav-left{display:flex; gap:16px; align-items:center}
     .brand{display:flex; gap:12px; align-items:center}
@@ -42,53 +26,40 @@
     .nav-links{display:flex; gap:14px; align-items:center}
     .nav-links a{padding:8px 12px;border-radius:8px;font-weight:600;background:transparent}
     .nav-links a:hover{background:rgba(255,255,255,0.02)}
-
-    /* THEME TOGGLE */
     .controls{display:flex;gap:10px;align-items:center}
     .btn{background:var(--accent); color:#021626; padding:8px 12px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
 
-    /* HERO */
     header.hero{padding-top:90px;padding-bottom:40px; text-align:center; display:flex; align-items:center; justify-content:center}
     .hero-inner{max-width:var(--maxw); padding:48px 20px}
     .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; padding:36px; border:1px solid var(--glass-border); box-shadow: 0 8px 40px rgba(0,0,0,0.5);}
     h1{font-size:44px; margin:0; letter-spacing:0.4px}
     p.lead{color:var(--muted); margin-top:10px; font-size:16px}
-
     .cta-row{margin-top:20px; display:flex; gap:12px; justify-content:center}
 
-    /* GRID / SECTIONS */
     section{max-width:var(--maxw); margin:40px auto; padding:24px}
     h2{color:var(--accent); margin-bottom:18px}
     .grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));}
     .card{background:var(--card); border-radius:var(--radius); padding:18px; border:1px solid var(--glass-border); box-shadow:0 6px 20px rgba(2,6,23,0.6)}
 
-    /* PROJECT CARDS */
-    .project-card img{width:100%;border-radius:10px;display:block}
+    .project-card img{width:100%;border-radius:10px;display:block; height:180px; object-fit:cover}
     .project-meta{display:flex; justify-content:space-between; align-items:center; margin-top:10px}
     .tags{display:flex; gap:8px; flex-wrap:wrap}
     .tag{background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; font-size:12px; color:var(--muted)}
-
-    /* FILTERS */
     .filters{display:flex; gap:12px; margin-bottom:14px; flex-wrap:wrap}
     .filter-btn{padding:8px 12px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.03); cursor:pointer}
     .filter-btn.active{background:var(--accent); color:#021626}
-
-    /* FLOATING NAV STYLING when scrolled */
-    .scrolled nav{backdrop-filter: blur(6px)}
-
-    /* CONTACT FORM */
     form{display:flex; flex-direction:column; gap:12px}
     input,textarea{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
-
     footer{padding:40px;text-align:center;color:var(--muted)}
 
-    /* RESPONSIVE */
-    @media(max-width:720px){ h1{font-size:32px} nav{left:10px; transform:none; width:calc(100% - 20px)} .nav-links{display:none} }
+    /* responsive tweaks */
+    @media(max-width:980px){ .project-card img{height:160px} }
+    @media(max-width:720px){ h1{font-size:32px} nav{left:10px; transform:none; width:calc(100% - 20px)} .nav-links{display:none} .hero-card{padding:20px} }
+
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-left">
       <div class="brand">
@@ -112,7 +83,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-card">
@@ -127,7 +97,6 @@
     </div>
   </header>
 
-  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
@@ -140,7 +109,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS with filters + GIFs -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="filters">
@@ -152,68 +120,157 @@
     </div>
 
     <div class="grid" id="projects-grid">
-      <!-- Project 1 -->
-      <div class="card project" data-tags="puzzle">
-        <img src="https://i.imgur.com/XCS24Ry.gif" alt="Puzzle mechanics" />
-        <h3>Puzzle Mechanics Pack</h3>
-        <p>One Line Draw, Water Sort, Draw Bridge, Dalgona — modular systems, scriptable objects and optimized loading.</p>
-        <div class="project-meta"><div class="tags"><span class="tag">Unity</span><span class="tag">Scriptable Objects</span></div><a href="#">GitHub</a></div>
-      </div>
 
-      <!-- Project 2 -->
+      <!-- Play Store projects -->
       <div class="card project" data-tags="simulation">
-        <img src="https://i.imgur.com/C0Q3wLI.gif" alt="Simulation" />
-        <h3>Simulation Systems</h3>
-        <p>Vehicle controllers, F1 mechanics, Mud Truck Off-Road and physics-integrated gameplay systems.</p>
-        <div class="project-meta"><div class="tags"><span class="tag">Unity</span><span class="tag">Physics</span></div><a href="#">GitHub</a></div>
+        <img src="https://play-lh.googleusercontent.com/4Yf0w3KxHfVgP0yqIYk2V3dPOw2o3YJp7Rr3q3s7x1Yb5k8h3E0N1f.png" alt="Hair Cutting Barber Shop" onerror="this.src='https://i.imgur.com/XCS24Ry.gif'" />
+        <h3>Hair Cutting Barber Shop</h3>
+        <p>Simulation & casual gameplay. (Game District)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.gds.hair.cutting.barber.shop.games" target="_blank">Play Store</a></div>
       </div>
 
-      <!-- Project 3 -->
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/2abc.png" alt="Robot Car Battle Transform" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>Robot Car Battle Transform</h3>
+        <p>Action / Vehicle simulation. (Game District)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.gds.robot.car.battle.transform" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/solar.png" alt="Solar Planet Smash" onerror="this.src='https://i.imgur.com/6E8vH2d.gif'" />
+        <h3>Solar Planet Smash</h3>
+        <p>Planetary destruction mechanics, particle FX and physics-based interactions. (Game District)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span><span class="tag">VFX</span></div><a href="https://play.google.com/store/apps/details?id=com.gds.solar.planet.smash" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/electronics.png" alt="Electronics Store Manager" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>Electronics Store Manager</h3>
+        <p>Simulation & management gameplay. (Game District)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.gds.electronics.store.manager.game" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/airplane.png" alt="Airplane Fight Sim" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>Airplane Fight Sim</h3>
+        <p>Aerial combat & flight physics. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.airplane.fight.sim" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/wildwolf.png" alt="Wild Wolf Sim" onerror="this.src='https://i.imgur.com/XCS24Ry.gif'" />
+        <h3>Wild Wolf Sim 3D</h3>
+        <p>Animal life open-world mechanics. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.wild.wolf.sim3d" target="_blank">Play Store</a></div>
+      </div>
+
       <div class="card project" data-tags="ai">
-        <img src="https://i.imgur.com/6E8vH2d.gif" alt="AI toolkit" />
-        <h3>AI Navigation Toolkit</h3>
-        <p>NavMesh helpers, waypoint movement, obstacle avoidance, and decision systems for dynamic agents.</p>
-        <div class="project-meta"><div class="tags"><span class="tag">AI</span><span class="tag">NavMesh</span></div><a href="#">GitHub</a></div>
+        <img src="https://play-lh.googleusercontent.com/asmr.png" alt="ASMR Mask Mixture" onerror="this.src='https://i.imgur.com/6E8vH2d.gif'" />
+        <h3>ASMR Mask Mixture</h3>
+        <p>Sensory ASMR mechanics and interactions. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">ASMR</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.asmr.mask.mixture" target="_blank">Play Store</a></div>
       </div>
 
-      <!-- Project 4: WebGL placeholder -->
-      <div class="card project" data-tags="tools">
-        <div style="width:100%;height:180px;border-radius:10px;background:linear-gradient(135deg,#0f1720,#081226);display:flex;align-items:center;justify-content:center;color:var(--muted)">Unity WebGL Demo (Placeholder)</div>
-        <h3>Playable Demo (WebGL)</h3>
-        <p>Embed your Unity WebGL build here. Use the folder `/Build` and drag the `index.html` of the build into this card.</p>
-        <div class="project-meta"><div class="tags"><span class="tag">WebGL</span><span class="tag">Demo</span></div><a href="#">How to upload</a></div>
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/weapons.png" alt="Weapons Shop Simulator" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>Weapons Shop Simulator</h3>
+        <p>Shop management and simulation. (Game District)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.gds.weapons.shop.simulator" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/grandpa.png" alt="Grandpa Cat Life" onerror="this.src='https://i.imgur.com/XCS24Ry.gif'" />
+        <h3>Grandpa Cat Life: Pet Simulator</h3>
+        <p>Animal life & pet simulation. (Game District)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.gds.grandpa.cat.life.pet.simulator" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/citydemolition.png" alt="City Demolition" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>City Demolition</h3>
+        <p>Destruction physics & environmental interactions. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Physics</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.city.demolition" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/fatcat.png" alt="Fat Cat Sim" onerror="this.src='https://i.imgur.com/XCS24Ry.gif'" />
+        <h3>Fat Cat Sim</h3>
+        <p>Casual simulation mechanics. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.fat.cat.sim" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/powerwash.png" alt="Road Power Wash Truck" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>Road Power Wash Truck</h3>
+        <p>Service simulation & vehicle mechanics. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.road.power.wash.truck" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/horse.png" alt="Stable Horse Care" onerror="this.src='https://i.imgur.com/XCS24Ry.gif'" />
+        <h3>Stable Horse Care Sim</h3>
+        <p>Animal care & simulation. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.stable.horse.care.sim" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/trashtruck.png" alt="City Trash Truck Sim" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>City Trash Truck Simulator</h3>
+        <p>Vehicle & route management simulation. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.city.trash.truck.sim" target="_blank">Play Store</a></div>
+      </div>
+
+      <div class="card project" data-tags="simulation">
+        <img src="https://play-lh.googleusercontent.com/mudtruck.png" alt="Mud Truck Offroad Driving" onerror="this.src='https://i.imgur.com/C0Q3wLI.gif'" />
+        <h3>Mud Truck Offroad Driving</h3>
+        <p>Off-road vehicle physics & simulation. (Torque Gamers)</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span></div><a href="https://play.google.com/store/apps/details?id=com.torquegamers.mudtruck.offroad.driving" target="_blank">Play Store</a></div>
       </div>
 
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="grid">
       <div class="card">
         <h3>Gameplay Programmer — Game District</h3>
-        <p><em>July 2025 – Present</em></p>
+        <p><em>July 2025 – Present | Lahore, Pakistan</em></p>
         <ul>
-          <li>Built modular gameplay systems; reduced iteration time by <strong>35%</strong>.</li>
-          <li>Optimized performance: <strong>~22% CPU reduction</strong> and <strong>~18% GPU gains</strong>.</li>
-          <li>Integrated Addressables, Scriptable Objects and Firebase services.</li>
+          <li>Implementing advanced gameplay systems for puzzle and simulation titles using Unity and C#.</li>
+          <li>Built modular and reusable systems reducing iteration time by <strong>35%</strong>.</li>
+          <li>Integrated player controls, physics interactions, level flow, and challenge logic.</li>
+          <li>Optimized gameplay loops achieving ~<strong>22% CPU</strong> reduction and ~<strong>18% GPU</strong> efficiency gains using Unity Profiler.</li>
+          <li>Implemented Scriptable Objects, Design Patterns (MVC/SOLID), Addressables, and Firebase services.</li>
+          <li>Collaborated with designers to prototype mechanics and tune game feel, increasing engagement and retention.</li>
+          <li>Tools: Unity, C#, Git, Unity Profiler, Visual Studio, VS Code.</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Unity Gameplay Developer — Mindbotix Studio</h3>
-        <p><em>Aug 2021 – June 2025</em></p>
+        <p><em>Aug 2021 – June 2025 | Lahore, Pakistan</em></p>
         <ul>
-          <li>Developed AI navigation, vehicle systems and physics interactions.</li>
-          <li>Reduced frame spikes by <strong>28%</strong> using deep profiling and memory optimization.</li>
-          <li>Integrated live ops, leaderboards and contributed to <strong>5M+ downloads</strong>.</li>
+          <li>Developed end-to-end gameplay features for simulation, open-world, ASMR, and action games.</li>
+          <li>Built AI navigation, character controllers, vehicle systems, and environmental interactions.</li>
+          <li>Implemented planetary destruction mechanics, advanced particle FX, lasers, asteroids, and physics-based effects (Solar Smash).</li>
+          <li>Optimized gameplay loops, reduced frame spikes by <strong>28%</strong>, and improved memory usage through profiling.</li>
+          <li>Integrated Firebase, leaderboards, and live ops features to support user engagement.</li>
+          <li>Created prototypes for new mechanics and shipped multiple high-download games contributing to <strong>5M+</strong> total installs.</li>
+          <li>Tools: Unity, C#, Git, Shader Graph, Particle Systems, Unity Profiler, Visual Studio.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Computer Operator — Random Company</h3>
+        <p><em>6 months</em></p>
+        <ul>
+          <li>Maintained system operations, performed data entry, and provided office IT support.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">
@@ -231,21 +288,18 @@
     © 2025 Saif ur Rehman • Gameplay Programmer • <a href="https://github.com/saifurrehman539eb">GitHub</a> • <a href="https://linkedin.com/in/saifurrehman539">LinkedIn</a>
   </footer>
 
-  <!-- SCRIPTS: Theme toggle, filters, gsap init, resume download -->
   <script>
-    // Theme toggle (Light/Dark)
+    // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', ()=>{
       document.documentElement.classList.toggle('theme-light');
       themeToggle.textContent = document.documentElement.classList.contains('theme-light') ? 'Dark' : 'Light';
     });
-
-    // Download resume button (serves file from /assets)
+    // Download resume
     document.getElementById('download-resume').addEventListener('click', ()=>{
       window.open('/assets/Saif_ur_Rehman_Gameplay_Programmer.pdf','_blank');
     });
-
-    // Project filtering
+    // Filters
     const filters = document.querySelectorAll('.filter-btn');
     const projects = document.querySelectorAll('.project');
     filters.forEach(btn=>btn.addEventListener('click', ()=>{
@@ -257,8 +311,7 @@
         p.style.display = p.dataset.tags.includes(f) ? 'block' : 'none';
       });
     }));
-
-    // GSAP animations (fade/slide)
+    // GSAP
     window.addEventListener('DOMContentLoaded', ()=>{
       gsap.registerPlugin(ScrollTrigger);
       gsap.from('.hero-card',{opacity:0, y:40, duration:1, ease:'power3.out'});
@@ -266,12 +319,10 @@
         gsap.from(card,{opacity:0, y:30, duration:0.9, ease:'power3.out', scrollTrigger:{trigger:card, start:'top 80%'}});
       });
     });
-
-    // Smooth scroll for nav links
+    // smooth scroll
     document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{
       e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
     }));
   </script>
-
 </body>
 </html>
