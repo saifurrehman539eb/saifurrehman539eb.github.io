@@ -1,98 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saif ur Rehman • Gameplay Programmer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saif ur Rehman — Gameplay Programmer</title>
+  <meta name="description" content="Saif ur Rehman — Gameplay Programmer (Unity, C#). Portfolio: gameplay systems, puzzle mechanics, AI, optimization, Addressables, Firebase. Open to remote roles." />
+  <meta name="keywords" content="Unity, C#, Gameplay Programmer, Game Developer, Puzzle Mechanics, Optimization, Scriptable Objects, Addressables, Firebase" />
+  <meta name="author" content="Saif ur Rehman" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Saif ur Rehman — Gameplay Programmer" />
+  <meta property="og:description" content="Gameplay Programmer (Unity & C#). Portfolio of gameplay systems, puzzle mechanics, AI, and performance optimization." />
+  <meta property="og:image" content="/assets/og-banner.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts & icons (system stack fallback) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP for animations (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:#e6e6e6; }
-    header { padding:60px 20px; text-align:center; background:#111; }
-    h1 { font-size:40px; margin:0; }
-    h2 { color:#66aaff; margin-top:40px; }
-    .subtitle { font-size:18px; opacity:0.8; }
-    section { max-width:900px; margin:0 auto; padding:40px 20px; }
-    .card { background:#151515; padding:20px; border-radius:10px; margin-bottom:20px; border:1px solid #222; }
-    .grid { display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); }
-    a { color:#66aaff; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    footer { text-align:center; padding:40px 0; font-size:14px; opacity:0.6; }
+    :root{
+      --bg:#05060a; --card:#0f1720; --muted:#94a3b8; --accent:#4db8ff; --glass: rgba(255,255,255,0.03);
+      --glass-border: rgba(255,255,255,0.06);
+      --radius:14px; --maxw:1100px;
+    }
+    /* Light theme variables (toggled) */
+    .theme-light{ --bg:#f7fafc; --card:#ffffff; --muted:#475569; --accent:#0ea5a4; --glass: rgba(255,255,255,0.6); --glass-border: rgba(0,0,0,0.06); color:#0b1220 }
+
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color: #e6eef8;}
+    a{color:var(--accent)}
+
+    /* NAVBAR */
+    nav{position:fixed; top:18px; left:50%; transform:translateX(-50%); z-index:60; width:calc(100% - 48px); max-width:var(--maxw); display:flex; align-items:center; justify-content:space-between}
+    .nav-left{display:flex; gap:16px; align-items:center}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#0ea5a4,#4db8ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#001}
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:8px;font-weight:600;background:transparent}
+    .nav-links a:hover{background:rgba(255,255,255,0.02)}
+
+    /* THEME TOGGLE */
+    .controls{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--accent); color:#021626; padding:8px 12px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
+
+    /* HERO */
+    header.hero{padding-top:90px;padding-bottom:40px; text-align:center; display:flex; align-items:center; justify-content:center}
+    .hero-inner{max-width:var(--maxw); padding:48px 20px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:18px; padding:36px; border:1px solid var(--glass-border); box-shadow: 0 8px 40px rgba(0,0,0,0.5);}
+    h1{font-size:44px; margin:0; letter-spacing:0.4px}
+    p.lead{color:var(--muted); margin-top:10px; font-size:16px}
+
+    .cta-row{margin-top:20px; display:flex; gap:12px; justify-content:center}
+
+    /* GRID / SECTIONS */
+    section{max-width:var(--maxw); margin:40px auto; padding:24px}
+    h2{color:var(--accent); margin-bottom:18px}
+    .grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));}
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; border:1px solid var(--glass-border); box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+
+    /* PROJECT CARDS */
+    .project-card img{width:100%;border-radius:10px;display:block}
+    .project-meta{display:flex; justify-content:space-between; align-items:center; margin-top:10px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; font-size:12px; color:var(--muted)}
+
+    /* FILTERS */
+    .filters{display:flex; gap:12px; margin-bottom:14px; flex-wrap:wrap}
+    .filter-btn{padding:8px 12px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.03); cursor:pointer}
+    .filter-btn.active{background:var(--accent); color:#021626}
+
+    /* FLOATING NAV STYLING when scrolled */
+    .scrolled nav{backdrop-filter: blur(6px)}
+
+    /* CONTACT FORM */
+    form{display:flex; flex-direction:column; gap:12px}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+
+    footer{padding:40px;text-align:center;color:var(--muted)}
+
+    /* RESPONSIVE */
+    @media(max-width:720px){ h1{font-size:32px} nav{left:10px; transform:none; width:calc(100% - 20px)} .nav-links{display:none} }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Saif ur Rehman</h1>
-    <p class="subtitle">Gameplay Programmer • Unity • C# • Mobile Games</p>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">
+      <div class="brand">
+        <div class="logo">SR</div>
+        <div>
+          <div style="font-weight:800">Saif ur Rehman</div>
+          <div style="font-size:12px;color:var(--muted)">Gameplay Programmer • Unity & C#</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="download-resume">Download CV</button>
+      <button class="btn" id="theme-toggle">Light</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <h1>Saif ur Rehman — Gameplay Programmer</h1>
+        <p class="lead">I design and implement gameplay systems, puzzle mechanics, AI, and optimization for mobile & cross-platform games using Unity & C#.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:saifurrehman539eb@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        Gameplay Programmer with 4+ years of experience building real‑time gameplay systems, puzzle mechanics, AI behaviors,
-        and optimized architectures for mobile & cross‑platform games using Unity & C#. Experienced with Design Patterns (MVC/SOLID),
-        Scriptable Objects, Addressables, Firebase, Leaderboards/Live Ops, and deep performance profiling achieving 15–30% CPU/GPU gains.
-      </p>
-    </div>
-  </section>
-
-  <section>
+  <!-- SKILLS -->
+  <section id="skills">
     <h2>Skills</h2>
     <div class="grid">
-      <div class="card">Unity • C# • Gameplay Systems • Puzzle Mechanics</div>
-      <div class="card">AI Pathfinding • State Machines • Physics Interactions</div>
-      <div class="card">Scriptable Objects • MVC • SOLID • Event Systems</div>
+      <div class="card">Gameplay Systems • Player Controllers • Puzzle Mechanics</div>
+      <div class="card">Scriptable Objects • MVC • SOLID Architecture</div>
+      <div class="card">AI Pathfinding • State Machines • Event Systems</div>
       <div class="card">Addressables • Firebase • CDN • Live Ops</div>
       <div class="card">Optimization (CPU/GPU/Memory) • Unity Profiler</div>
       <div class="card">Git • GitHub • Visual Studio • VS Code</div>
     </div>
   </section>
 
-  <section>
+  <!-- PROJECTS with filters + GIFs -->
+  <section id="projects">
     <h2>Projects</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+      <button class="filter-btn" data-filter="simulation">Simulation</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="tools">Tools</button>
+    </div>
+
+    <div class="grid" id="projects-grid">
+      <!-- Project 1 -->
+      <div class="card project" data-tags="puzzle">
+        <img src="https://i.imgur.com/XCS24Ry.gif" alt="Puzzle mechanics" />
+        <h3>Puzzle Mechanics Pack</h3>
+        <p>One Line Draw, Water Sort, Draw Bridge, Dalgona — modular systems, scriptable objects and optimized loading.</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span><span class="tag">Scriptable Objects</span></div><a href="#">GitHub</a></div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card project" data-tags="simulation">
+        <img src="https://i.imgur.com/C0Q3wLI.gif" alt="Simulation" />
+        <h3>Simulation Systems</h3>
+        <p>Vehicle controllers, F1 mechanics, Mud Truck Off-Road and physics-integrated gameplay systems.</p>
+        <div class="project-meta"><div class="tags"><span class="tag">Unity</span><span class="tag">Physics</span></div><a href="#">GitHub</a></div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card project" data-tags="ai">
+        <img src="https://i.imgur.com/6E8vH2d.gif" alt="AI toolkit" />
+        <h3>AI Navigation Toolkit</h3>
+        <p>NavMesh helpers, waypoint movement, obstacle avoidance, and decision systems for dynamic agents.</p>
+        <div class="project-meta"><div class="tags"><span class="tag">AI</span><span class="tag">NavMesh</span></div><a href="#">GitHub</a></div>
+      </div>
+
+      <!-- Project 4: WebGL placeholder -->
+      <div class="card project" data-tags="tools">
+        <div style="width:100%;height:180px;border-radius:10px;background:linear-gradient(135deg,#0f1720,#081226);display:flex;align-items:center;justify-content:center;color:var(--muted)">Unity WebGL Demo (Placeholder)</div>
+        <h3>Playable Demo (WebGL)</h3>
+        <p>Embed your Unity WebGL build here. Use the folder `/Build` and drag the `index.html` of the build into this card.</p>
+        <div class="project-meta"><div class="tags"><span class="tag">WebGL</span><span class="tag">Demo</span></div><a href="#">How to upload</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
     <div class="grid">
       <div class="card">
-        <h3>Puzzle Mechanics Pack</h3>
-        <p>One Line Draw, Water Sort, Draw Bridge, Dalgona — implemented with clean, modular gameplay architecture.</p>
-        <a href="#">Demo / GitHub (Coming Soon)</a>
+        <h3>Gameplay Programmer — Game District</h3>
+        <p><em>July 2025 – Present</em></p>
+        <ul>
+          <li>Built modular gameplay systems; reduced iteration time by <strong>35%</strong>.</li>
+          <li>Optimized performance: <strong>~22% CPU reduction</strong> and <strong>~18% GPU gains</strong>.</li>
+          <li>Integrated Addressables, Scriptable Objects and Firebase services.</li>
+        </ul>
       </div>
+
       <div class="card">
-        <h3>Simulation Systems</h3>
-        <p>Vehicle controllers, character movement systems, physics-based interactions, destructible environments.</p>
-        <a href="#">Demo / GitHub (Coming Soon)</a>
-      </div>
-      <div class="card">
-        <h3>AI Navigation Toolkit</h3>
-        <p>Waypoint AI, NavMesh logic, obstacle avoidance, dynamic agent decisions.</p>
-        <a href="#">Demo / GitHub (Coming Soon)</a>
+        <h3>Unity Gameplay Developer — Mindbotix Studio</h3>
+        <p><em>Aug 2021 – June 2025</em></p>
+        <ul>
+          <li>Developed AI navigation, vehicle systems and physics interactions.</li>
+          <li>Reduced frame spikes by <strong>28%</strong> using deep profiling and memory optimization.</li>
+          <li>Integrated live ops, leaderboards and contributed to <strong>5M+ downloads</strong>.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Gameplay Programmer — Game District</h3>
-      <p>2025 – Present</p>
-      <p>Advanced gameplay systems, modular architecture, profiling optimization, Firebase, Addressables, 22% CPU & 18% GPU gains.</p>
-    </div>
-    <div class="card">
-      <h3>Unity Gameplay Developer — Mindbotix Studio</h3>
-      <p>2021 – 2025</p>
-      <p>AI, simulation, physics systems, live ops, Firebase, 28% frame spike reduction, contributed to 5M+ downloads.</p>
-    </div>
-  </section>
-
-  <section>
+  <!-- CONTACT -->
+  <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p>Email: <a href="mailto:saifurrehman539eb@gmail.com">saifurrehman539eb@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/saifurrehman539">linkedin.com/in/saifurrehman539</a></p>
-      <p>GitHub: <a href="https://github.com/saifurrehman539eb">github.com/saifurrehman539eb</a></p>
+      <form action="https://formsubmit.co/saifurrehman539eb@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Portfolio message from website" />
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" placeholder="How can I help?" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   </section>
 
   <footer>
-    © 2025 Saif ur Rehman — Gameplay Programmer
+    © 2025 Saif ur Rehman • Gameplay Programmer • <a href="https://github.com/saifurrehman539eb">GitHub</a> • <a href="https://linkedin.com/in/saifurrehman539">LinkedIn</a>
   </footer>
+
+  <!-- SCRIPTS: Theme toggle, filters, gsap init, resume download -->
+  <script>
+    // Theme toggle (Light/Dark)
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('theme-light');
+      themeToggle.textContent = document.documentElement.classList.contains('theme-light') ? 'Dark' : 'Light';
+    });
+
+    // Download resume button (serves file from /assets)
+    document.getElementById('download-resume').addEventListener('click', ()=>{
+      window.open('/assets/Gameplay_Programmer_Resume.pdf','_blank');
+    });
+
+    // Project filtering
+    const filters = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project');
+    filters.forEach(btn=>btn.addEventListener('click', ()=>{
+      filters.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      projects.forEach(p=>{
+        if(f==='all'){ p.style.display='block'; return; }
+        p.style.display = p.dataset.tags.includes(f) ? 'block' : 'none';
+      });
+    }));
+
+    // GSAP animations (fade/slide)
+    window.addEventListener('DOMContentLoaded', ()=>{
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.hero-card',{opacity:0, y:40, duration:1, ease:'power3.out'});
+      gsap.utils.toArray('.card').forEach(card=>{
+        gsap.from(card,{opacity:0, y:30, duration:0.9, ease:'power3.out', scrollTrigger:{trigger:card, start:'top 80%'}});
+      });
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{
+      e.preventDefault(); document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    }));
+  </script>
+
 </body>
 </html>
