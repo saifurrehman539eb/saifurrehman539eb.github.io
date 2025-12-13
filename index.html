@@ -135,20 +135,6 @@ h1{font-size:52px}
   font-weight:700;
 }
 
-/* CONTACT – CONTENT ONLY SHIFTED */
-#contact .card form{
-  padding-left:24px;
-}
-#contact input,
-#contact textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:14px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  font-family:inherit;
-}
-
 /* FOOTER */
 footer{
   text-align:center;
@@ -157,15 +143,11 @@ footer{
 }
 footer a{margin:0 8px}
 
-/* RESPONSIVE */
 @media(max-width:900px){
   .hero-card{grid-template-columns:1fr;text-align:center}
   .avatar{margin:auto}
   h1{font-size:40px}
   .nav-links{display:none}
-}
-@media(max-width:768px){
-  #contact .card form{padding-left:0}
 }
 </style>
 </head>
@@ -179,7 +161,6 @@ footer a{margin:0 8px}
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
     </div>
     <a class="btn" href="assets/Saif_ur_Rehman_Gameplay_Programmer.pdf" target="_blank">Download CV</a>
   </div>
@@ -191,35 +172,144 @@ footer a{margin:0 8px}
     <div>
       <h1>Saif ur Rehman</h1>
       <p class="lead">
-        Gameplay Programmer and Unity Game Developer with 4+ years of experience building, optimizing,
-        and shipping mobile games. Specialized in gameplay systems, puzzle mechanics, AI behaviors,
-        physics interactions, and performance optimization. Contributed to multiple Play Store titles
-        with 5M+ combined installs.
+        Gameplay Programmer and Unity Game Developer with 4+ years of professional experience building,
+        optimizing, and shipping mobile games. Specialized in gameplay systems, puzzle mechanics,
+        AI behaviors, physics interactions, and performance optimization using Unity Profiler.
+        Hands-on experience with Addressables, Firebase, CDN-based content delivery, live ops,
+        and leaderboard systems. Contributed to multiple Play Store titles with 5M+ combined installs.
       </p>
       <p class="lead">
-        <a href="https://linkedin.com/in/saifurrehman539" target="_blank">LinkedIn Profile →</a>
+        📧 <strong>Email:</strong> saifurrehman539eb@gmail.com<br>
+        🔗 <a href="https://linkedin.com/in/saifurrehman539" target="_blank">LinkedIn Profile</a>
       </p>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2><br>
-  <div class="card">
-    <form action="https://formsubmit.co/saifurrehman539eb@gmail.com" method="POST">
-      <input name="name" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
+<section id="skills">
+<h2>Skills</h2><br>
+<div class="tags">
+<span class="tag">Gameplay Programming</span>
+<span class="tag">Unity</span>
+<span class="tag">C#</span>
+<span class="tag">Gameplay Systems</span>
+<span class="tag">Puzzle Mechanics</span>
+<span class="tag">AI & State Machines</span>
+<span class="tag">Physics & Destruction</span>
+<span class="tag">Design Patterns (MVC, SOLID)</span>
+<span class="tag">Scriptable Objects</span>
+<span class="tag">Performance Optimization</span>
+<span class="tag">Memory Optimization</span>
+<span class="tag">Addressables</span>
+<span class="tag">Firebase</span>
+<span class="tag">Live Ops & Leaderboards</span>
+<span class="tag">Git</span>
+</div>
+</section>
+
+<section id="tools">
+<h2>Tools</h2><br>
+<div class="tools">
+<div class="tool">Unity</div>
+<div class="tool">Visual Studio</div>
+<div class="tool">VS Code</div>
+<div class="tool">GitHub</div>
+<div class="tool">Unity Profiler</div>
+<div class="tool">Firebase</div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2><br>
+<div class="grid">
+<div class="card">
+<h3>Gameplay Programmer — Game District</h3>
+<p class="lead">July 2025 – Present</p>
+<ul>
+<li>Design and implement gameplay systems for puzzle and simulation games.</li>
+<li>Architect scalable systems using MVC, SOLID, and Scriptable Objects.</li>
+<li>Optimize performance using Unity Profiler.</li>
+<li>Integrate Addressables, Firebase, live ops, and leaderboards.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Unity Game Developer — Mindbotix Studio</h3>
+<p class="lead">Aug 2021 – June 2025</p>
+<ul>
+<li>Developed and shipped multiple mobile games on Google Play.</li>
+<li>Implemented AI systems, vehicle physics, destruction, and particle effects.</li>
+<li>Contributed to titles with 5M+ installs.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2><br>
+<div class="grid">
+
+<script>
+const projects = [
+["Hair Cutting Barber Shop","com.gds.hair.cutting.barber.shop.games"],
+["Robot Car Battle Transform","com.gds.robot.car.battle.transform"],
+["Solar Planet Smash","com.gds.solar.planet.smash"],
+["Electronics Store Manager","com.gds.electronics.store.manager.game"],
+["Airplane Fight Simulator","com.torquegamers.airplane.fight.sim"],
+["Wild Wolf Simulator 3D","com.torquegamers.wild.wolf.sim3d"],
+["ASMR Mask Mixture","com.torquegamers.asmr.mask.mixture"],
+["Weapons Shop Simulator","com.gds.weapons.shop.simulator"],
+["Grandpa Cat Life","com.gds.grandpa.cat.life.pet.simulator"],
+["City Demolition","com.torquegamers.city.demolition"],
+["Fat Cat Simulator","com.torquegamers.fat.cat.sim"],
+["Road Power Wash Truck","com.torquegamers.road.power.wash.truck"],
+["Stable Horse Care Simulator","com.torquegamers.stable.horse.care.sim"],
+["City Trash Truck Simulator","com.torquegamers.city.trash.truck.sim"],
+["Mud Truck Offroad Driving","com.torquegamers.mudtruck.offroad.driving"]
+];
+
+document.write(projects.map(p=>`
+<div class="card">
+  <div class="slideshow">
+    <img src="assets/projects/${p[1]}-1.jpg" class="active">
+    <img src="assets/projects/${p[1]}-2.jpg">
   </div>
+  <h3>${p[0]}</h3>
+  <div class="project-footer">
+    <div class="tags">
+      <span class="tag">Gameplay Programming</span>
+      <span class="tag">Unity</span>
+      <span class="tag">C#</span>
+    </div>
+    <a class="store-btn" target="_blank"
+       href="https://play.google.com/store/apps/details?id=${p[1]}">
+       Play Store
+    </a>
+  </div>
+</div>
+`).join(""));
+</script>
+
+</div>
 </section>
 
 <footer>
-  © 2025 Saif ur Rehman • Gameplay Programmer •
-  <a href="https://linkedin.com/in/saifurrehman539" target="_blank">LinkedIn</a> •
-  <a href="https://github.com/saifurrehman539eb" target="_blank">GitHub</a>
+© 2025 Saif ur Rehman • Gameplay Programmer •
+📧 saifurrehman539eb@gmail.com •
+<a href="https://linkedin.com/in/saifurrehman539" target="_blank">LinkedIn</a> •
+<a href="https://github.com/saifurrehman539eb" target="_blank">GitHub</a>
 </footer>
+
+<script>
+document.querySelectorAll('.slideshow').forEach(s=>{
+  const imgs=s.querySelectorAll('img');let i=0;
+  setInterval(()=>{
+    imgs[i].classList.remove('active');
+    i=(i+1)%imgs.length;
+    imgs[i].classList.add('active');
+  },3000);
+});
+</script>
 
 </body>
 </html>
