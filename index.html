@@ -251,44 +251,108 @@ footer a{margin:0 8px}
 
 <script>
 const projects = [
-["Hair Cutting Barber Shop","com.gds.hair.cutting.barber.shop.games"],
-["Robot Car Battle Transform","com.gds.robot.car.battle.transform"],
-["Solar Planet Smash","com.gds.solar.planet.smash"],
-["Electronics Store Manager","com.gds.electronics.store.manager.game"],
-["Airplane Fight Simulator","com.torquegamers.airplane.fight.sim"],
-["Wild Wolf Simulator 3D","com.torquegamers.wild.wolf.sim3d"],
-["ASMR Mask Mixture","com.torquegamers.asmr.mask.mixture"],
-["Weapons Shop Simulator","com.gds.weapons.shop.simulator"],
-["Grandpa Cat Life","com.gds.grandpa.cat.life.pet.simulator"],
-["City Demolition","com.torquegamers.city.demolition"],
-["Fat Cat Simulator","com.torquegamers.fat.cat.sim"],
-["Road Power Wash Truck","com.torquegamers.road.power.wash.truck"],
-["Stable Horse Care Simulator","com.torquegamers.stable.horse.care.sim"],
-["City Trash Truck Simulator","com.torquegamers.city.trash.truck.sim"],
-["Mud Truck Offroad Driving","com.torquegamers.mudtruck.offroad.driving"]
+  {
+    title: "Hair Cutting Barber Shop",
+    package: "com.gds.hair.cutting.barber.shop.games",
+    images: "hcbs"
+  },
+  {
+    title: "Robot Car Battle Transform",
+    package: "com.gds.robot.car.battle.transform",
+    images: "robotcar"
+  },
+  {
+    title: "Solar Planet Smash",
+    package: "com.gds.solar.planet.smash",
+    images: "solar"
+  },
+  {
+    title: "Electronics Store Manager",
+    package: "com.gds.electronics.store.manager.game",
+    images: "electronics"
+  },
+  {
+    title: "Airplane Fight Simulator",
+    package: "com.torquegamers.airplane.fight.sim",
+    images: "airplane"
+  },
+  {
+    title: "Wild Wolf Simulator 3D",
+    package: "com.torquegamers.wild.wolf.sim3d",
+    images: "wolf"
+  },
+  {
+    title: "ASMR Mask Mixture",
+    package: "com.torquegamers.asmr.mask.mixture",
+    images: "asmr"
+  },
+  {
+    title: "Weapons Shop Simulator",
+    package: "com.gds.weapons.shop.simulator",
+    images: "weapons"
+  },
+  {
+    title: "Grandpa Cat Life",
+    package: "com.gds.grandpa.cat.life.pet.simulator",
+    images: "cat"
+  },
+  {
+    title: "City Demolition",
+    package: "com.torquegamers.city.demolition",
+    images: "demolition"
+  },
+  {
+    title: "Fat Cat Simulator",
+    package: "com.torquegamers.fat.cat.sim",
+    images: "fatcat"
+  },
+  {
+    title: "Road Power Wash Truck",
+    package: "com.torquegamers.road.power.wash.truck",
+    images: "powerwash"
+  },
+  {
+    title: "Stable Horse Care Simulator",
+    package: "com.torquegamers.stable.horse.care.sim",
+    images: "horse"
+  },
+  {
+    title: "City Trash Truck Simulator",
+    package: "com.torquegamers.city.trash.truck.sim",
+    images: "trashtruck"
+  },
+  {
+    title: "Mud Truck Offroad Driving",
+    package: "com.torquegamers.mudtruck.offroad.driving",
+    images: "mudtruck"
+  }
 ];
 
-document.write(projects.map(p=>`
-<div class="card">
-  <div class="slideshow">
-    <img src="assets/projects/hcbs/hcbs1.jpg" class="active">
-    <img src="assets/projects/hcbs/hcbs2.jpg">
-  </div>
-  <h3>${p[0]}</h3>
-  <div class="project-footer">
-    <div class="tags">
-      <span class="tag">Gameplay Programming</span>
-      <span class="tag">Unity</span>
-      <span class="tag">C#</span>
+document.write(projects.map(p => `
+  <div class="card">
+    <div class="slideshow">
+      <img src="assets/projects/${p.images}/${p.images}1.jpg" class="active">
+      <img src="assets/projects/${p.images}/${p.images}2.jpg">
     </div>
-    <a class="store-btn" target="_blank"
-       href="https://play.google.com/store/apps/details?id=${p[1]}">
-       Play Store
-    </a>
+
+    <h3>${p.title}</h3>
+
+    <div class="project-footer">
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span>
+        <span class="tag">Unity</span>
+        <span class="tag">C#</span>
+      </div>
+
+      <a class="store-btn" target="_blank"
+         href="https://play.google.com/store/apps/details?id=${p.package}">
+        Play Store
+      </a>
+    </div>
   </div>
-</div>
 `).join(""));
 </script>
+
 
 </div>
 </section>
