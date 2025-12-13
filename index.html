@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saif ur Rehman | Gameplay Programmer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+:root{
+--bg:#f7fafc;--card:#fff;--accent:#0ea5a4;--text:#0b1220;--muted:#475569;--border:rgba(2,6,23,.08)
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter;background:var(--bg);color:var(--text)}
+a{text-decoration:none}
+.container{max-width:1200px;margin:auto;padding:24px}
+header{padding:100px 24px 40px}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:30px;background:var(--card);padding:36px;border-radius:24px;border:1px solid var(--border)}
+.hero img{width:180px;height:180px;border-radius:20px;object-fit:cover}
+h1{font-size:56px;margin:0}
+.lead{color:var(--muted);margin-top:12px}
+.btn{background:var(--accent);padding:12px 18px;border-radius:12px;color:#033;font-weight:700;display:inline-block}
+
+.filters{position:sticky;top:10px;background:var(--bg);padding:16px;z-index:10}
+.filter-btn{padding:8px 14px;border-radius:20px;border:1px solid var(--border);margin:4px;cursor:pointer;background:#fff;font-weight:600}
+.filter-btn.active{background:var(--accent)}
+
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--card);padding:20px;border-radius:18px;border:1px solid var(--border)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:12px;background:#f1f5f9;padding:6px 10px;border-radius:999px}
+.play{margin-top:14px;display:inline-block;color:var(--accent);font-weight:700}
+</style>
+</head>
+
+<body>
+
+<header class="container">
+  <div class="hero">
+    <img src="assets/profile.jpg" alt="Saif ur Rehman">
+    <div>
+      <h1>Saif ur Rehman</h1>
+      <p class="lead">Gameplay Programmer specializing in Unity & C#. 5M+ installs across shipped titles.</p>
+      <a class="btn" href="assets/Saif_ur_Rehman_Gameplay_Programmer.pdf" target="_blank">Download CV</a>
+    </div>
+  </div>
+</header>
+
+<section class="container filters">
+  <button class="filter-btn active" data-filter="all">All (<span id="count-all"></span>)</button>
+  <button class="filter-btn" data-filter="physics">Physics</button>
+  <button class="filter-btn" data-filter="ai">AI</button>
+  <button class="filter-btn" data-filter="optimization">Optimization</button>
+  <button class="filter-btn" data-filter="systems">Systems</button>
+  <button class="filter-btn" id="clear">Clear Filters</button>
+</section>
+
+<section class="container">
+  <div class="grid" id="projects">
+
+    <div class="card project" data-tags="physics optimization">
+      <h3>Hair Cutting Barber Shop</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.gds.hair.cutting.barber.shop.games" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics ai">
+      <h3>Robot Car Battle Transform</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.gds.robot.car.battle.transform" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics optimization">
+      <h3>Solar Planet Smash</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.gds.solar.planet.smash" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="systems optimization">
+      <h3>Electronics Store Manager</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.gds.electronics.store.manager.game" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics ai">
+      <h3>Airplane Fight Simulator</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.airplane.fight.sim" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="ai systems">
+      <h3>Wild Wolf Simulator 3D</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.wild.wolf.sim3d" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="optimization systems">
+      <h3>ASMR Mask Mixture</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.asmr.mask.mixture" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="systems">
+      <h3>Weapons Shop Simulator</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.gds.weapons.shop.simulator" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="ai">
+      <h3>Grandpa Cat Life</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.gds.grandpa.cat.life.pet.simulator" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics">
+      <h3>City Demolition</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.demolition" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="optimization">
+      <h3>Fat Cat Simulator</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.fat.cat.sim" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics">
+      <h3>Road Power Wash Truck</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.road.power.wash.truck" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="systems">
+      <h3>Stable Horse Care</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.stable.horse.care.sim" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics">
+      <h3>City Trash Truck</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.trash.truck.sim" target="_blank">Play Store →</a>
+    </div>
+
+    <div class="card project" data-tags="physics">
+      <h3>Mud Truck Offroad Driving</h3>
+      <a class="play" href="https://play.google.com/store/apps/details?id=com.torquegamers.mudtruck.offroad.driving" target="_blank">Play Store →</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const buttons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.project');
+document.getElementById('count-all').textContent = projects.length;
+
+buttons.forEach(btn=>{
+  btn.onclick=()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    gsap.to(projects,{opacity:0,scale:.95,duration:.3,onComplete:()=>{
+      projects.forEach(p=>{
+        p.style.display=(f==='all'||p.dataset.tags.includes(f))?'block':'none';
+      });
+      gsap.fromTo('.project',{opacity:0,scale:.95},{opacity:1,scale:1,duration:.4});
+    }});
+  };
+});
+</script>
+
+</body>
+</html>
