@@ -28,9 +28,9 @@
     header.hero{padding-top:120px;padding-bottom:40px}
     .hero-inner{max-width:var(--maxw);margin:auto;padding:20px}
     .hero-card{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--card);border-radius:26px;padding:36px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(2,6,23,.08)}
-    .avatar{width:180px;height:180px;border-radius:22px;object-fit:cover;border:1px solid var(--border);box-shadow:0 10px 30px rgba(2,6,23,.15)}
-    h1{font-size:56px;line-height:1.05;margin:0}
-    p.lead{color:var(--muted);margin-top:14px;font-size:17px}
+    .avatar{width:190px;height:190px;border-radius:24px;object-fit:cover;border:1px solid var(--border);box-shadow:0 10px 30px rgba(2,6,23,.15)}
+    h1{font-size:60px;line-height:1.05;margin:0}
+    p.lead{color:var(--muted);margin-top:16px;font-size:17px}
 
     section{max-width:var(--maxw);margin:40px auto;padding:24px}
     h2{color:var(--accent);margin-bottom:18px}
@@ -43,13 +43,11 @@
     .tools{display:flex;gap:16px;flex-wrap:wrap}
     .tool{padding:10px 14px;border-radius:12px;background:#f1f5f9;border:1px solid var(--border);font-weight:600}
 
-    /* slideshow */
     .slideshow{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--border)}
-    .slideshow img{width:100%;height:180px;object-fit:cover;display:none}
+    .slideshow img{width:100%;height:190px;object-fit:cover;display:none}
     .slideshow img.active{display:block}
 
-    .project-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .tag{background:#f1f5f9;padding:6px 10px;border-radius:999px;font-size:12px;color:#334155}
 
     form{display:flex;flex-direction:column;gap:12px}
@@ -57,7 +55,7 @@
 
     footer{text-align:center;padding:40px;color:var(--muted)}
 
-    @media(max-width:900px){.hero-card{grid-template-columns:1fr;text-align:center}.avatar{margin:auto}h1{font-size:40px}}
+    @media(max-width:900px){.hero-card{grid-template-columns:1fr;text-align:center}.avatar{margin:auto}h1{font-size:42px}}
     @media(max-width:640px){nav{left:10px;transform:none;width:calc(100% - 20px)}.nav-links{display:none}}
   </style>
 </head>
@@ -77,7 +75,6 @@
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
-  <button class="btn" onclick="window.open('/assets/Saif_ur_Rehman_Gameplay_Programmer.pdf','_blank')">Download CV</button>
 </nav>
 
 <header class="hero">
@@ -86,7 +83,7 @@
       <img class="avatar" src="assets/profile.jpg" alt="Saif ur Rehman" />
       <div>
         <h1>Saif ur Rehman</h1>
-        <p class="lead">Gameplay Programmer and Game Developer with 4+ years of professional experience building, optimizing, and shipping mobile and cross-platform games using Unity and C#. Specialized in gameplay systems, puzzle mechanics, AI behaviors, physics interactions, and scalable architecture. Strong focus on performance and memory optimization using Unity Profiler and debugging tools. Hands-on experience with Addressables, Firebase, CDN-based content delivery, live ops, and leaderboard systems. Contributed to multiple published titles with 5M+ combined installs.</p>
+        <p class="lead">Gameplay Programmer with 4+ years of professional experience developing and optimizing mobile and cross-platform games using Unity and C#. Specialized in gameplay systems, puzzle mechanics, AI behaviors, physics interactions, and scalable architectures. Strong focus on profiling, memory optimization, and performance tuning using Unity Profiler and debugging tools. Experienced with Addressables, Firebase-based live ops, leaderboards, and CDN-driven content delivery. Contributed to multiple published titles with 5M+ combined installs.</p>
       </div>
     </div>
   </div>
@@ -105,13 +102,6 @@
   </div>
 </section>
 
-<section id="tools">
-  <h2>Tools</h2>
-  <div class="tools">
-    <div class="tool">Unity</div><div class="tool">Visual Studio</div><div class="tool">VS Code</div><div class="tool">Git</div><div class="tool">GitHub</div><div class="tool">Unity Profiler</div>
-  </div>
-</section>
-
 <section id="experience">
   <h2>Experience</h2>
   <div class="grid">
@@ -122,8 +112,7 @@
         <li>Design and implement gameplay systems for puzzle and simulation games using Unity and C#.</li>
         <li>Built scalable architecture using MVC, SOLID, and Scriptable Objects, reducing iteration time by ~35%.</li>
         <li>Optimized CPU, GPU, and memory usage using Unity Profiler (≈22% CPU improvement).</li>
-        <li>Integrated Addressables, Firebase services, live ops, and leaderboards.</li>
-        <li>Collaborated closely with designers to prototype mechanics and improve retention.</li>
+        <li>Integrated Addressables, Firebase services, live ops, and leaderboard systems.</li>
       </ul>
     </div>
     <div class="card">
@@ -131,8 +120,7 @@
       <p><em>Aug 2021 – June 2025 | Lahore, Pakistan</em></p>
       <ul>
         <li>Developed and shipped gameplay features for simulation, ASMR, and action games on Google Play.</li>
-        <li>Implemented AI behaviors, state machines, vehicle physics, and environmental interactions.</li>
-        <li>Built physics-driven destruction systems and particle-heavy gameplay features.</li>
+        <li>Implemented AI behaviors, vehicle physics, destruction systems, and particle-heavy gameplay.</li>
         <li>Reduced frame spikes by ~28% through profiling and memory optimization.</li>
         <li>Contributed to live titles with 5M+ combined installs.</li>
       </ul>
@@ -142,33 +130,243 @@
 
 <section id="projects">
   <h2>Projects</h2>
-  <div class="grid">
 
-    <div class="card">
+  <!-- Filters -->
+  <div class="tools" id="project-filters" style="margin-bottom:20px">
+    <div class="tool filter active" data-filter="all">All</div>
+    <div class="tool filter" data-filter="simulation">Simulation</div>
+    <div class="tool filter" data-filter="physics">Physics</div>
+    <div class="tool filter" data-filter="ai">AI</div>
+    <div class="tool filter" data-filter="optimization">Optimization</div>
+  </div>
+
+  <div class="grid" id="projects-grid">
+
+    <!-- PROJECTS START -->
+
+    <div class="card project" data-category="simulation optimization">
       <div class="slideshow">
-        <img src="assets/projects/solar-smash-1.jpg" class="active" />
-        <img src="assets/projects/solar-smash-2.jpg" />
-        <img src="assets/projects/solar-smash-3.jpg" />
+        <img src="assets/projects/hair-barber-1.jpg" class="active" />
+        <img src="assets/projects/hair-barber-2.jpg" />
       </div>
-      <h3>Solar Planet Smash</h3>
-      <p>Physics-based planetary destruction gameplay.</p>
+      <div class="project-meta">
+        <h3>Hair Cutting Barber Shop</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.gds.hair.cutting.barber.shop.games" target="_blank">Play Store</a>
+      </div>
+      <p>Casual barber simulation with interactive tools, progression systems, and optimized touch gameplay.</p>
       <div class="tags">
-        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span>
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Optimization</span>
       </div>
-      <div class="project-meta"><a href="https://play.google.com/store/apps/details?id=com.gds.solar.planet.smash" target="_blank">Play Store</a></div>
     </div>
 
-    <div class="card">
+    <div class="card project" data-category="physics ai">
       <div class="slideshow">
         <img src="assets/projects/robot-car-1.jpg" class="active" />
         <img src="assets/projects/robot-car-2.jpg" />
       </div>
-      <h3>Robot Car Battle Transform</h3>
-      <p>Vehicle combat and transformation systems.</p>
+      <div class="project-meta">
+        <h3>Robot Car Battle Transform</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.gds.robot.car.battle.transform" target="_blank">Play Store</a>
+      </div>
+      <p>Vehicle combat and transformation gameplay featuring physics-based controls and enemy AI.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="physics">
+      <div class="slideshow">
+        <img src="assets/projects/solar-smash-1.jpg" class="active" />
+        <img src="assets/projects/solar-smash-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Solar Planet Smash</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.gds.solar.planet.smash" target="_blank">Play Store</a>
+      </div>
+      <p>Planet destruction gameplay using physics forces, particles, and performance-optimized effects.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Particle Effects</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="simulation optimization">
+      <div class="slideshow">
+        <img src="assets/projects/electronics-store-1.jpg" class="active" />
+        <img src="assets/projects/electronics-store-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Electronics Store Manager</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.gds.electronics.store.manager.game" target="_blank">Play Store</a>
+      </div>
+      <p>Store management simulation with economy balancing, UI systems, and scalable gameplay architecture.</p>
       <div class="tags">
         <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Optimization</span>
       </div>
-      <div class="project-meta"><a href="https://play.google.com/store/apps/details?id=com.gds.robot.car.battle.transform" target="_blank">Play Store</a></div>
+    </div>
+
+    <div class="card project" data-category="physics ai">
+      <div class="slideshow">
+        <img src="assets/projects/airplane-fight-1.jpg" class="active" />
+        <img src="assets/projects/airplane-fight-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Airplane Fight Simulator</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.airplane.fight.sim" target="_blank">Play Store</a>
+      </div>
+      <p>Aerial combat simulator featuring flight physics, AI enemies, and combat systems.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="ai simulation">
+      <div class="slideshow">
+        <img src="assets/projects/wild-wolf-1.jpg" class="active" />
+        <img src="assets/projects/wild-wolf-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Wild Wolf Simulator 3D</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.wild.wolf.sim3d" target="_blank">Play Store</a>
+      </div>
+      <p>Open-world animal simulator with AI-driven behaviors and environment interaction.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">AI Systems</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="optimization simulation">
+      <div class="slideshow">
+        <img src="assets/projects/asmr-mask-1.jpg" class="active" />
+        <img src="assets/projects/asmr-mask-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>ASMR Mask Mixture</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.asmr.mask.mixture" target="_blank">Play Store</a>
+      </div>
+      <p>ASMR-focused gameplay with smooth transitions, tactile feedback, and optimized rendering.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Optimization</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="simulation">
+      <div class="slideshow">
+        <img src="assets/projects/weapons-shop-1.jpg" class="active" />
+        <img src="assets/projects/weapons-shop-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Weapons Shop Simulator</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.gds.weapons.shop.simulator" target="_blank">Play Store</a>
+      </div>
+      <p>Shop management simulation with inventory systems, customer AI, and progression loops.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Systems Design</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="ai simulation">
+      <div class="slideshow">
+        <img src="assets/projects/grandpa-cat-1.jpg" class="active" />
+        <img src="assets/projects/grandpa-cat-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Grandpa Cat Life: Pet Simulator</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.gds.grandpa.cat.life.pet.simulator" target="_blank">Play Store</a>
+      </div>
+      <p>Pet simulation featuring AI-driven behaviors, interaction loops, and player progression.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">AI Systems</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="physics">
+      <div class="slideshow">
+        <img src="assets/projects/city-demolition-1.jpg" class="active" />
+        <img src="assets/projects/city-demolition-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>City Demolition</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.demolition" target="_blank">Play Store</a>
+      </div>
+      <p>Destruction-based gameplay using rigidbody physics, forces, and performance tuning.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="simulation optimization">
+      <div class="slideshow">
+        <img src="assets/projects/fat-cat-1.jpg" class="active" />
+        <img src="assets/projects/fat-cat-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Fat Cat Simulator</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.fat.cat.sim" target="_blank">Play Store</a>
+      </div>
+      <p>Casual simulation with animation-driven interactions and optimized gameplay loops.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Optimization</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="physics">
+      <div class="slideshow">
+        <img src="assets/projects/power-wash-1.jpg" class="active" />
+        <img src="assets/projects/power-wash-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Road Power Wash Truck</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.road.power.wash.truck" target="_blank">Play Store</a>
+      </div>
+      <p>Vehicle-based cleaning gameplay using particle systems and physics interactions.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Particle Effects</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="simulation">
+      <div class="slideshow">
+        <img src="assets/projects/horse-care-1.jpg" class="active" />
+        <img src="assets/projects/horse-care-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Stable Horse Care Simulator</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.stable.horse.care.sim" target="_blank">Play Store</a>
+      </div>
+      <p>Animal care simulation using state-driven gameplay and interaction systems.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Systems Design</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="physics">
+      <div class="slideshow">
+        <img src="assets/projects/trash-truck-1.jpg" class="active" />
+        <img src="assets/projects/trash-truck-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>City Trash Truck Simulator</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.trash.truck.sim" target="_blank">Play Store</a>
+      </div>
+      <p>Route-based truck simulation with physics tuning and optimization.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span>
+      </div>
+    </div>
+
+    <div class="card project" data-category="physics">
+      <div class="slideshow">
+        <img src="assets/projects/mud-truck-1.jpg" class="active" />
+        <img src="assets/projects/mud-truck-2.jpg" />
+      </div>
+      <div class="project-meta">
+        <h3>Mud Truck Offroad Driving</h3>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.mudtruck.offroad.driving" target="_blank">Play Store</a>
+      </div>
+      <p>Off-road driving simulation with terrain physics and vehicle handling systems.</p>
+      <div class="tags">
+        <span class="tag">Gameplay Programming</span><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span>
+      </div>
     </div>
 
   </div>
@@ -195,21 +393,4 @@
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-card',{opacity:0,y:40,duration:1});
     gsap.utils.toArray('.card').forEach(c=>{
-      gsap.from(c,{opacity:0,y:30,duration:.8,scrollTrigger:{trigger:c,start:'top 85%'}});
-    });
-
-    // simple slideshow
-    document.querySelectorAll('.slideshow').forEach(show=>{
-      let imgs = show.querySelectorAll('img');
-      let i = 0;
-      setInterval(()=>{
-        imgs[i].classList.remove('active');
-        i = (i + 1) % imgs.length;
-        imgs[i].classList.add('active');
-      }, 3000);
-    });
-  });
-</script>
-
-</body>
-</html>
+      gsap.fr
