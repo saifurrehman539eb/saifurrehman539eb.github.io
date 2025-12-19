@@ -1,145 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Saif ur Rehman | Gameplay Programmer</title>
 
-<meta name="description" content="Saif ur Rehman – Unity Gameplay Programmer with 20+ shipped mobile games and millions of installs.">
-<meta property="og:title" content="Saif ur Rehman | Gameplay Programmer">
-<meta property="og:description" content="Unity Gameplay Programmer with shipped Play Store titles and live games.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7fafc;color:#0f172a}
-.container{max-width:1100px;margin:auto;padding:32px}
-nav{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#f7fafc;padding:16px 0;border-bottom:1px solid #e5e7eb;z-index:10}
-nav a{margin-left:16px;text-decoration:none;color:#0f172a;font-weight:600}
-h1{font-size:46px;margin:0}
-h2{margin-top:56px;font-size:30px}
-p{color:#475569;line-height:1.6}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;margin-top:20px}
-.project-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.store-btn{background:#0ea5e9;color:#fff;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:600}
-.badge{background:#dcfce7;color:#166534;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600}
-.tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
-.tag{background:#f1f5f9;padding:6px 10px;border-radius:999px;font-size:13px}
-footer{margin-top:80px;padding:40px 0;border-top:1px solid #e5e7eb;color:#64748b;text-align:center}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui;background:#f8fafc;color:#0f172a;line-height:1.6}
+a{text-decoration:none;color:#0ea5a4;font-weight:600}
+.container{max-width:1150px;margin:auto;padding:32px}
+
+nav{
+  position:sticky;top:0;z-index:100;
+  background:#ffffff;border-bottom:1px solid #e5e7eb
+}
+.nav-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 32px
+}
+.nav-inner a{margin-left:18px}
+
+.btn{
+  background:#0ea5a4;color:#022c22;
+  padding:10px 18px;border-radius:10px;font-weight:700
+}
+
+.hero{
+  display:flex;gap:32px;align-items:center;
+  background:#ffffff;padding:44px;
+  border-radius:22px;border:1px solid #e5e7eb;
+  margin-top:40px
+}
+.hero img{
+  width:190px;height:190px;object-fit:cover;
+  border-radius:22px;border:1px solid #e5e7eb
+}
+.hero h1{font-size:64px;font-weight:800}
+.hero h2{font-size:26px;color:#0ea5a4;margin-top:6px}
+.hero p{margin-top:14px;max-width:720px}
+
+.badge{
+  display:inline-block;margin-bottom:12px;
+  background:#ecfeff;color:#155e75;
+  padding:8px 18px;border-radius:999px;font-weight:700
+}
+
+section{margin-top:90px}
+.section-title{
+  font-size:32px;margin-bottom:28px;color:#0ea5a4
+}
+
+.card{
+  background:#ffffff;border:1px solid #e5e7eb;
+  border-radius:18px;padding:26px
+}
+
+.grid{display:grid;gap:26px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+
+.project-footer{
+  display:flex;align-items:center;margin-top:16px
+}
+.store-btn{
+  margin-left:auto;
+  background:#0ea5a4;color:#022c22;
+  padding:8px 16px;border-radius:10px;font-weight:700
+}
+
+.tools{display:flex;gap:14px;flex-wrap:wrap}
+.tool{
+  background:#f1f5f9;padding:10px 16px;
+  border-radius:14px;font-weight:600
+}
+
+footer{
+  text-align:center;margin:90px 0;color:#64748b
+}
+
+@media(max-width:800px){
+.hero{flex-direction:column;text-align:center}
+.hero img{margin:auto}
+}
 </style>
 </head>
 
 <body>
-<div class="container">
 
 <nav>
-<strong>Saif ur Rehman</strong>
-<div>
-<a href="#experience">Experience</a>
-<a href="#projects">Projects</a>
-<a href="https://linkedin.com/in/saifurrehman539" target="_blank">LinkedIn</a>
-</div>
+  <div class="nav-inner">
+    <strong>Saif ur Rehman</strong>
+    <div>
+      <a href="#experience">Experience</a>
+      <a href="#featured">Featured</a>
+      <a href="#projects">Projects</a>
+      <a class="btn" href="assets/Saif_ur_Rehman_Gameplay_Programmer.pdf" target="_blank">Download CV</a>
+    </div>
+  </div>
 </nav>
 
-<section>
-<h1>Gameplay Programmer</h1>
-<p>
-Unity Gameplay Programmer with 4+ years of experience building, optimizing, and shipping mobile games.
-Specialized in gameplay systems, physics-based mechanics, AI behaviors, and performance optimization.
-Contributed to 20+ published Play Store titles with millions of combined installs.
-</p>
-<p><strong>Email:</strong> saifurrehman539eb@gmail.com</p>
+<div class="container">
+  <div class="hero">
+    <img src="assets/profile.jpg" alt="Saif ur Rehman">
+    <div>
+      <div class="badge">5M+ Total Installs</div>
+      <h1>Saif ur Rehman</h1>
+      <h2>Gameplay Programmer</h2>
+
+      <p>
+        Gameplay Programmer with 4+ years of experience building and optimizing
+        mobile games using Unity and C#. Specialized in gameplay systems,
+        physics-based mechanics, AI behaviors, and performance optimization.
+      </p>
+
+      <p style="margin-top:14px">
+        📧 <a href="mailto:saifurrehman539eb@gmail.com">saifurrehman539eb@gmail.com</a><br>
+        🔗 <a target="_blank" href="https://linkedin.com/in/saifurrehman539">
+        linkedin.com/in/saifurrehman539</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<section class="container" id="experience">
+  <div class="section-title">Experience</div>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Gameplay Programmer — Game District</h3>
+      <p><em>Jul 2025 – Present</em></p>
+      <p>
+        Designing scalable gameplay systems, implementing live ops,
+        Addressables, Firebase, and performance profiling.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Unity Game Developer — Mindbotix Studio</h3>
+      <p><em>Aug 2021 – Jun 2025</em></p>
+      <p>
+        Shipped multiple Google Play titles. Built AI, physics gameplay,
+        optimization pipelines, and reusable gameplay frameworks.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section id="experience">
-<h2>Experience</h2>
-
-<div class="card">
-<strong>Gameplay Programmer — Game District</strong><br>
-<em>July 2025 – Present</em>
-<p>
-Developing scalable gameplay systems, implementing live-ops features,
-and optimizing performance using Unity Profiler, Addressables, and Firebase.
-</p>
-</div>
-
-<div class="card">
-<strong>Unity Game Developer — Mindbotix Studio</strong><br>
-<em>Aug 2021 – June 2025</em>
-<p>
-Built and shipped gameplay features, AI systems, physics interactions,
-and optimization pipelines for live games with millions of installs.
-</p>
-</div>
+<section class="container">
+  <div class="section-title">Tools & Technologies</div>
+  <div class="tools">
+    <div class="tool">Unity</div>
+    <div class="tool">C#</div>
+    <div class="tool">Unity Profiler</div>
+    <div class="tool">Addressables</div>
+    <div class="tool">Firebase</div>
+    <div class="tool">Visual Studio</div>
+    <div class="tool">VS Code</div>
+    <div class="tool">Git & GitHub</div>
+  </div>
 </section>
 
-<section id="projects">
-<h2>Featured Projects (High Installs)</h2>
+<section class="container" id="featured">
+  <div class="section-title">Featured Projects</div>
+  <div class="grid grid-2">
+    <div class="card"><h3>Robot Car Battle Transform</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.robot.car.battle.transform">Play Store</a></div>
+    <div class="card"><h3>Solar Planet Smash</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.solar.planet.smash">Play Store</a></div>
+    <div class="card"><h3>Cloth Shop Simulator</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.cloth.shop.simulator">Play Store</a></div>
+    <div class="card"><h3>Grandpa Cat Life</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.grandpa.cat.life.pet.simulator">Play Store</a></div>
+    <div class="card"><h3>City Demolition</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.demolition">Play Store</a></div>
+    <div class="card"><h3>ASMR Mask Mixture</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.torquegamers.asmr.mask.mixture">Play Store</a></div>
+  </div>
+</section>
 
-<div class="card">
-<div class="project-header">
-<h3>Hair Cutting Barber Shop</h3>
-<div>
-<span class="badge">1M+ Installs</span>
-<a class="store-btn" href="https://play.google.com/store/apps/details?id=com.gds.hair.cutting.barber.shop.games" target="_blank">Play Store</a>
-</div>
-</div>
-<p>Casual barber simulation with interactive tools, smooth touch mechanics, and performance optimization.</p>
-<div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Gameplay Programming</span><span class="tag">Optimization</span></div>
-</div>
-
-<div class="card">
-<div class="project-header">
-<h3>Grandpa Cat Life: Pet Simulator</h3>
-<div>
-<span class="badge">1M+ Installs</span>
-<a class="store-btn" href="https://play.google.com/store/apps/details?id=com.gds.grandpa.cat.life.pet.simulator" target="_blank">Play Store</a>
-</div>
-</div>
-<p>Pet simulation featuring AI-driven behaviors, interaction loops, and progression systems.</p>
-<div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">AI Systems</span></div>
-</div>
-
-<div class="card">
-<div class="project-header">
-<h3>Solar Planet Smash</h3>
-<div>
-<span class="badge">500K+ Installs</span>
-<a class="store-btn" href="https://play.google.com/store/apps/details?id=com.gds.solar.planet.smash" target="_blank">Play Store</a>
-</div>
-</div>
-<p>Physics-driven planetary destruction with particle-heavy visuals and optimized effects.</p>
-<div class="tags"><span class="tag">Unity</span><span class="tag">Physics</span><span class="tag">Performance Optimization</span></div>
-</div>
-
-<h2>Additional Projects</h2>
-
-<div class="card"><div class="project-header"><h3>War Robot Car Transformation</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.war.robot.car.transformation" target="_blank">Play Store</a></div><p>Robot transformation combat with vehicle physics and AI enemies.</p><div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Physics</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Robot Car Battle Transform</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.gds.robot.car.battle.transform" target="_blank">Play Store</a></div><p>Vehicle combat and transformation mechanics with physics-based controls.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Gameplay Programming</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Electronics Store Manager</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.gds.electronics.store.manager.game" target="_blank">Play Store</a></div><p>Store management simulation with economy balancing and UI systems.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Systems Design</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Weapons Shop Simulator</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.gds.weapons.shop.simulator" target="_blank">Play Store</a></div><p>Inventory-based shop simulation with customer AI.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Gameplay Systems</span></div></div>
-
-<div class="card"><div class="project-header"><h3>City Demolition</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.demolition" target="_blank">Play Store</a></div><p>Destruction-focused gameplay using rigidbodies and force systems.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Physics</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Fat Cat Simulator</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.fat.cat.sim" target="_blank">Play Store</a></div><p>Casual animal simulation with animation-driven interactions.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Optimization</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Road Power Wash Truck</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.road.power.wash.truck" target="_blank">Play Store</a></div><p>Vehicle-based service gameplay with particle effects.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Particles</span></div></div>
-
-<div class="card"><div class="project-header"><h3>City Trash Truck Simulator</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.city.trash.truck.sim" target="_blank">Play Store</a></div><p>Route-based vehicle simulation with physics tuning.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Physics</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Mud Truck Offroad Driving</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.mudtruck.offroad.driving" target="_blank">Play Store</a></div><p>Off-road driving simulation with terrain handling systems.</p><div class="tags"><span class="tag">Unity</span><span class="tag">Vehicle Physics</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Airplane Fight Simulator</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.airplane.fight.sim" target="_blank">Play Store</a></div><p>Aerial combat gameplay with AI enemies.</p><div class="tags"><span class="tag">Unity</span><span class="tag">AI</span></div></div>
-
-<div class="card"><div class="project-header"><h3>Wild Wolf Simulator 3D</h3><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.torquegamers.wild.wolf.sim3d" target="_blank">Play Store</a></div><p>Open-world animal simulation with AI behaviors.</p><div class="tags"><span class="tag">Unity</span><span class="tag">AI Systems</span></div></div>
-
+<section class="container" id="projects">
+  <div class="section-title">All Projects</div>
+  <div class="grid grid-2">
+    <div class="card"><h3>Hair Cutting Barber Shop</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.hair.cutting.barber.shop.games">Play Store</a></div>
+    <div class="card"><h3>Electronics Store Manager</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.electronics.store.manager.game">Play Store</a></div>
+    <div class="card"><h3>Weapons Shop Simulator</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.gds.weapons.shop.simulator">Play Store</a></div>
+    <div class="card"><h3>Airplane Fight Simulator</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.torquegamers.airplane.fight.sim">Play Store</a></div>
+    <div class="card"><h3>Wild Wolf Simulator 3D</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.torquegamers.wild.wolf.sim3d">Play Store</a></div>
+    <div class="card"><h3>Mud Truck Offroad Driving</h3><a class="store-btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.torquegamers.mudtruck.offroad.driving">Play Store</a></div>
+  </div>
 </section>
 
 <footer>
-© 2025 Saif ur Rehman · Gameplay Programmer · Unity & C#
+  © 2025 Saif ur Rehman — Gameplay Programmer
 </footer>
 
-</div>
 </body>
-</html>
+  </html>
+  
